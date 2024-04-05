@@ -34,7 +34,7 @@ relevant content.
 * `{MSG}`     = Message from the user
 * `{TIME}`    = Timestamp when the logging occurred
 * `{ERR_MSG}` = Error message corresponding to the error code, if provided.
-                It is automatically prepended with a space.
+				It is automatically prepended with a space.
 
 The timestamp format can be configured for each module using the `time_format`
 property, with the placeholders described below.

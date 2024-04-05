@@ -388,7 +388,7 @@ func error(message : String, module := default_module_name, error_code := -1) ->
 # Module management
 # -----------------
 
-func add_module(module_name : String, output_level := default_output_level, output_strategies = default_output_strategies, logfile : ExternalSink = null) -> String:
+func add_module(module_name : String, output_level := default_output_level, output_strategies = default_output_strategies, logfile : ExternalSink = null) -> Module:
 	## Add a new module with the given parameter or (by default) the default ones.
 	## Returns a reference to the instanced module.
 	if modules.has(module_name):
@@ -536,7 +536,7 @@ func format(template : String, level : LogLevels, module : String, message : Str
 	output = output.replace(FORMAT_IDS.time, get_formatted_datetime())
 
 	# Error message substitution
-	var error_message : String = ERROR_MESSAGES.get(error_code)
+	var error_message = ERROR_MESSAGES.get(error_code)
 	if error_message != null:
 		output = output.replace(FORMAT_IDS.error_message, " " + error_message)
 	else:
